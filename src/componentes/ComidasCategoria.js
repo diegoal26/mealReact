@@ -64,9 +64,11 @@ const ComidasCategoria =(props)=> {
     //const pagina = this.state.pagina;
     //const url =`https://pixabay.com/api/?key=20886245-6b8182fd51b896fe1604cfdfd&q=${this.state.termino}&page=${pagina}`;
     if(busqueda != ""){
-      const url =`https://www.themealdb.com/api/json/v1/1/search.php?s=${busqueda}`;
-      fetch(url).
-        then(respuesta=>respuesta.json()).then(resultado=>guardarEstado({termino:"",comidas:resultado.meals,pagina:1}));
+      /*const url =`https://www.themealdb.com/api/json/v1/1/search.php?s=${busqueda}`;
+      fetch(url).then(respuesta=>respuesta.json()).then(resultado=>guardarEstado({termino:"",comidas:resultado.meals,pagina:1}));*/
+        let comidasFiltradas = estado.comidas.filter(comida => comida.strMeal.toLowerCase().includes(busqueda.toLowerCase()));
+        guardarEstado({termino:"",comidas:comidasFiltradas,pagina:1})
+        
     }else{
       const url =`https://www.themealdb.com/api/json/v1/1/filter.php?c=${props.match.params.categ}`;
       fetch(url).
