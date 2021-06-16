@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 
 const ComidaDetalle = (props)=>{
     const history = useHistory();
-    let comidaId = props.match.params.id;
 
     const [detalle, guardarDetalle] = useState({
         termino:'',
@@ -12,9 +11,12 @@ const ComidaDetalle = (props)=>{
 
     useEffect(()=>{
         const consultarApi = ()=>{
-          const url =`https:www.themealdb.com/api/json/v1/1/lookup.php?i=${comidaId}`;
+            if(comidaId != ""){
+                const url =`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${props.match.params.id}`;
           fetch(url).
             then(respuesta=>respuesta.json()).then(resultado=>guardarDetalle({termino:"",detalles:resultado.meals}));
+            }
+          
         }
         consultarApi();
     },[]);
