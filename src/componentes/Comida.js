@@ -14,7 +14,7 @@ const Comida = (props)=>{
 
             <div className="card-body">
                 <p className="card-text">{props.strMeal}</p>
-                <button onClick={handleClick}>Ver Detalles</button>
+                <button className="btn-warning" onClick={handleClick}>Details</button>
             </div>
         </div>
     </div>);
