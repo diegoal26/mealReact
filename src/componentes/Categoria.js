@@ -18,7 +18,7 @@ const Categoria = (props)=>{
 
             <div className="card-body">
                 <p className="card-text">{props.strCategory}</p>
-                <button onClick={handleClick}>Ver Opciones</button>
+                <button className="btn-warning" onClick={handleClick}>Options</button>
             </div>
         </div>
     </div>);

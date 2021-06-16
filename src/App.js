@@ -86,7 +86,7 @@ const App =()=> {
       <div className="app container">
         <header className="App-header">
           <div className="jumbotron">
-            <p className="lead text-center">Restaurant</p>
+            <h2 className="text-center">Restaurant</h2>
           </div>
           
         </header>

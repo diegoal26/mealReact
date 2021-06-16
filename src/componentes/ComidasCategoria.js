@@ -60,7 +60,7 @@ const ComidasCategoria =(props)=> {
   }*/
 
   function consultarApiBuscar(){
-    console.log("busco");
+    //console.log("busco");
     //const pagina = this.state.pagina;
     //const url =`https://pixabay.com/api/?key=20886245-6b8182fd51b896fe1604cfdfd&q=${this.state.termino}&page=${pagina}`;
     if(busqueda != ""){
@@ -91,7 +91,7 @@ const ComidasCategoria =(props)=> {
         <div className="row">
               <div className="form-group col-md-8">
                   <input type="text" className="form-control form-control-lg" 
-                  placeholder="Search for your food.." defaultValue={busqueda} onChange={e => guardarBusqueda(e.target.value)}/>
+                  placeholder="Search for your food by name.." defaultValue={busqueda} onChange={e => guardarBusqueda(e.target.value)}/>
               </div>
 
               <div className="form-group col-md-4">
@@ -99,7 +99,7 @@ const ComidasCategoria =(props)=> {
               </div>
         </div>
       <div className="app container">
-              <button onClick={()=>history.goBack()}>Volver</button>
+              <button className="mb-3 btn-warning btn-lg" onClick={()=>history.goBack()}>Back</button>
               
                 <div className="row justify-content-center">
                   {consulto?estado.comidas.map(comida=>(

@@ -23,7 +23,7 @@ const ComidaDetalle = (props)=>{
     
 
     return(<>
-        <button onClick={()=>history.goBack()}>Volver</button>
+        <button className="mb-3 btn-warning btn-lg" onClick={()=>history.goBack()}>Back</button>
         <h2>Details</h2>
         {detalle.detalles.length>0?<div className="col-12 col-sm-12 col-md-12 col-lg-4 mb-4">
             <div className="card">
@@ -31,9 +31,9 @@ const ComidaDetalle = (props)=>{
             <div className="card-body">
                 <p className="card-text">Name: {detalle.detalles[0].strMeal}</p>
                 <h4>Ingredients:</h4>
-                <p className="card-text">{detalle.detalles[0].strIngredient1}</p>
-                <p className="card-text">{detalle.detalles[0].strIngredient2}</p>
-                <p className="card-text">{detalle.detalles[0].strIngredient3}</p>
+                <p className="card-text">* {detalle.detalles[0].strIngredient1}</p>
+                <p className="card-text">* {detalle.detalles[0].strIngredient2}</p>
+                <p className="card-text">* {detalle.detalles[0].strIngredient3}</p>
                 </div>
             </div>
         </div>:null}
