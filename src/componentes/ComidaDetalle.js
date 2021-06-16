@@ -11,11 +11,10 @@ const ComidaDetalle = (props)=>{
 
     useEffect(()=>{
         const consultarApi = ()=>{
-            if(comidaId != ""){
                 const url =`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${props.match.params.id}`;
           fetch(url).
             then(respuesta=>respuesta.json()).then(resultado=>guardarDetalle({termino:"",detalles:resultado.meals}));
-            }
+            
           
         }
         consultarApi();
